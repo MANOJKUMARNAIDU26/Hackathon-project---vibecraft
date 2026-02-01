@@ -2,6 +2,8 @@
 
 An intelligent, state-of-the-art resume analysis tool that uses NLP and real-world job data to bridge the gap between your profile and your dream career.
 
+<img width="1920" height="5485" alt="output" src="https://github.com/user-attachments/assets/4408ff91-f323-4e7d-8014-ad75d0861093" />
+
 
 
 ## 📁 Project Structure
