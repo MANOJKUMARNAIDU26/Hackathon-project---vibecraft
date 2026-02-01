@@ -1,0 +1,66 @@
+[
+    {
+        "role": "Data Scientist",
+        "description": "Python Machine Learning Deep Learning SQL Statistics modeling visualization pandas scikit-learn tensorflow pytorch"
+    },
+    {
+        "role": "Web Developer",
+        "description": "HTML CSS JavaScript React Node.js MongoDB API design RESTful services frontend backend fullstack git"
+    },
+    {
+        "role": "Project Manager",
+        "description": "Agile Scrum Jira leadership communication risk management stakeholder management roadmapping timeline budgeting"
+    },
+    {
+        "role": "Android Developer",
+        "description": "Java Kotlin Android SDK XML material design mobile app development gradle jetpack compose"
+    },
+    {
+        "role": "DevOps Engineer",
+        "description": "Docker Kubernetes Jenkins AWS Azure Terraform CI/CD Linux Nginx Ansible Prometheus Grafana Cloud"
+    },
+    {
+        "role": "Cybersecurity Analyst",
+        "description": "Security Penetration Testing Network Firewall Compliance Encryption SIEM Vulnerability Assessment SOC"
+    },
+    {
+        "role": "Backend Developer",
+        "description": "Go Rust Python Java Spring Boot Django Node.js PostgreSQL Redis Microservices REST GraphQL"
+    },
+    {
+        "role": "Frontend Developer",
+        "description": "React Vue Angular TypeScript CSS Sass Tailwind Next.js Vite Webpack UX UI Design"
+    },
+    {
+        "role": "Machine Learning Engineer",
+        "description": "NLP Pytorch TensorFlow MLOps Scikit-learn Computer Vision Transformers LLM HuggingFace Deployment"
+    },
+    {
+        "role": "Cloud Architect",
+        "description": "AWS GCP Azure Serverless Infrastructure as Code Networking Security High Availability Disaster Recovery"
+    },
+    {
+        "role": "Data Engineer",
+        "description": "Spark Hadoop Kafka ETL SQL NoSQL Airflow Snowflake BigQuery Data Warehousing Pipelines"
+    },
+    {
+        "role": "Blockchain Developer",
+        "description": "Solidity Rust Smart Contracts Ethereum Web3.js Hardhat Go-Ethereum Decentralized Apps DApps"
+    },
+    {
+        "role": "QA Engineer",
+        "description": "Selenium Jest Pytest Automation Testing Manual Testing Bug Tracking Jira Cypress CI/CD"
+    },
+    {
+        "role": "Full Stack Engineer",
+        "description": "Full-stack development React Node.js Python SQL API design System architecture Scalability"
+    },
+    {
+        "role": "UX/UI Designer",
+        "description": "Figma Adobe XD Prototyping User Research Sketch Typography Wireframing Accessibility Design Systems"
+    },
+    {
+        "role": "Embedded Systems Engineer",
+        "description": "C C++ RTOS Microcontrollers Firmware ARM STM32 Digital Signal Processing Hardware Interfacing"
+    }
+]

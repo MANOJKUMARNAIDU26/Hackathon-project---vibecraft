@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-multipart
+pandas
+scikit-learn
+nltk
+pdfplumber
+python-docx
+duckduckgo_search
+ddgs
+primp

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Intelligence | AI-Powered Career Matching</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div id="side-nav" class="side-nav hidden">
+        <a href="#hero" class="side-link active" data-section="hero">
+            <span class="dot"><span class="icon">🏠</span></span>
+            <span class="label">AI Resume Analyzer, Analysis Intelligence</span>
+        </a>
+        <a href="#insights-section" class="side-link" data-section="insights-section">
+            <span class="dot"><span class="icon">📊</span></span>
+            <span class="label">Project Milestones, Experience Portfolio</span>
+        </a>
+        <a href="#results-grid" class="side-link" data-section="results-grid">
+            <span class="dot"><span class="icon">🎯</span></span>
+            <span class="label">AI Career Discoveries</span>
+        </a>
+        <a href="#skill-roadmap" class="side-link" data-section="skill-roadmap">
+            <span class="dot"><span class="icon">🚀</span></span>
+            <span class="label">Professional Skill Roadmap</span>
+        </a>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="icon">📄</span> Resume Intelligence
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#results-section" class="nav-link">ATS Scorer</a>
+            <a href="#results-section" class="nav-link">Job Finder</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header id="hero" class="hero animate-in">
+            <h1>AI Resume Analyzer</h1>
+            <p>Elevate your professional trajectory with precision skill matching.</p>
+        </header>
+
+        <section class="upload-section animate-in" style="animation-delay: 0.2s">
+            <div class="upload-card" id="drop-zone">
+                <div class="upload-content">
+                    <div class="upload-icon">🖋️</div>
+                    <p class="upload-text">Drag and drop your resume or <span>click to browse</span></p>
+                    <p class="file-info">PDF, DOCX, or TXT (Max 10MB)</p>
+                </div>
+                <input type="file" id="file-input" hidden accept=".pdf,.docx,.txt">
+            </div>
+
+            <div id="file-preview" class="file-preview hidden">
+                <div class="file-item">
+                    <span class="file-name">filename.pdf</span>
+                    <button id="remove-file" class="remove-btn">×</button>
+                </div>
+                <button id="analyze-btn" class="primary-btn">Analyze Resume</button>
+            </div>
+        </section>
+
+        <section id="loading-state" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p>Processing Resume Intelligence...</p>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <h2 class="section-title">Analysis Intelligence</h2>
+
+            <div class="summary-grid">
+                <div class="ats-card animate-in">
+                    <h3>ATS Optimization Score</h3>
+                    <div id="ats-score-value" class="ats-value">0%</div>
+                    <div class="ats-meter-bg">
+                        <div id="ats-meter-fill" class="ats-meter-fill"></div>
+                    </div>
+                </div>
+
+                <div class="skills-card animate-in" style="animation-delay: 0.1s">
+                    <h3>Detected Core Competencies</h3>
+                    <div id="skills-list" class="skills-list">
+                        <!-- Tags will be injected here -->
+                    </div>
+                </div>
+
+                <div class="suggestions-card animate-in" style="animation-delay: 0.2s">
+                    <h3>Direct Career Openings</h3>
+                    <div id="suggestions-list" class="suggestions-list">
+                        <!-- Links will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="insights-section" class="intelligence-grid animate-in" style="animation-delay: 0.3s">
+                <div class="context-card">
+                    <h3>Project Milestones</h3>
+                    <ul id="projects-list" class="intelligence-list"></ul>
+                </div>
+                <div class="context-card">
+                    <h3>Experience Portfolio</h3>
+                    <ul id="experience-list" class="intelligence-list"></ul>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 5rem;">AI Career Discoveries</h2>
+            <div id="results-grid" class="results-grid">
+                <!-- Cards will be injected here -->
+            </div>
+
+            <h2 class="section-title" style="margin-top: 5rem;">Professional Skill Roadmap</h2>
+            <div id="skill-roadmap" class="roadmap-grid">
+                <!-- Roadmap items will be injected here -->
+            </div>
+
+            <!-- Learning Choice Modal -->
+            <div id="learning-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Expand Your Expertise</h3>
+                    <p id="modal-skill-name">Choose your learning path for this skill:</p>
+                    <div class="modal-actions">
+                        <button id="btn-free" class="modal-btn free">
+                            <span>Free</span>
+                            <small>YouTube Tutorials</small>
+                        </button>
+                        <button id="btn-paid" class="modal-btn paid">
+                            <span>Paid</span>
+                            <small>Professional Courses</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suitability Visualizer Modal (Pie Chart) -->
+            <div id="visualizer-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-visualizer close-modal">&times;</span>
+                    <h3 id="visualizer-role-name">Suitability Breakdown</h3>
+
+                    <div class="chart-wrapper">
+                        <div id="pie-chart" class="pie-chart"></div>
+                    </div>
+
+                    <div class="visualizer-legend">
+                        <div class="legend-item suit">
+                            <span class="dot"></span>
+                            <span id="legend-suit-text">Suit: 85%</span>
+                        </div>
+                        <div class="legend-item not-suit">
+                            <span class="dot"></span>
+                            <span id="legend-not-suit-text">Not Suit: 15%</span>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                        Based on your real-time skill density and title alignment.
+                    </p>
+                </div>
+            </div>
+
+            <div class="details-container">
+                <div class="accordion">
+                    <button class="accordion-header">
+                        Detailed Competency Analysis
+                        <span class="arrow">↓</span>
+                    </button>
+                    <div class="accordion-content">
+                        <table id="analysis-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Match Score</th>
+                                    <th>Match Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody id="detailed-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-header">
+                        Extracted Blueprint
+                        <span class="arrow">↓</span>
+                    </button>
+                    <div class="accordion-content">
+                        <pre id="extracted-text-view"></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
