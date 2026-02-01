@@ -1,114 +1,73 @@
-# Hackathon-project---vibecraft
+# 🤖 AI Resume Analyzer
+
+An intelligent, state-of-the-art resume analysis tool that uses NLP and real-world job data to bridge the gap between your profile and your dream career.
 
 
-AI Resume Analyzer & Job Matcher
 
-A Streamlit web app that automates resume screening using NLP and a lightweight ML approach. The system converts resumes into TF-IDF vectors and compares them with job role skill profiles using cosine similarity to find the best job match with clear scores.
+## 📁 Project Structure
 
-
-🚀 Features
-
-Upload resume in PDF format
-
-Automatic text extraction and cleaning
-
-TF-IDF model trained on job role skill corpora
-
-Cosine similarity–based job matching
-
-Displays best match and similarity scores for all roles
-
-Clean, modular, and reproducible architecture
-
-
-🧠 How It Works
-
-Resume PDF → text extraction
-
-Text cleaning and preprocessing
-
-TF-IDF vectorization (pre-trained on job roles)
-
-Cosine similarity between resume and job vectors
-
-Display best matched role with scores
-
-
-🏗️ Project Structure
+```bash
 resume_webapp/
-│
-├── app.py
-├── train_model.py
-├── model/
-│   ├── tfidf.pkl
-│   └── job_vectors.pkl
-├── data/
-│   └── job_roles.json
-├── services/
-│   ├── parser.py
-│   ├── cleaner.py
-│   └── predictor.py
-├── requirements.txt
+├── data/                 # Job role training data and JSON configs
+├── model/                # Pre-trained ML models for role prediction
+├── services/             # Core logic (Parser, Intelligence Engine, Predictor)
+├── static/               # Frontend assets (HTML, CSS, JS)
+├── main.py               # FastAPI application entry point
+├── requirements.txt      # Project dependencies
+└── output.png            # Application preview
+```
 
+## 🌟 Key Features
 
-🛠️ Tech Stack
+- **📊 ATS Optimization Score**: Get an instant breakdown of how well your resume matches industry-standard Applicant Tracking Systems.
+- **🔍 Deep Content Extraction**: Automatically identifies complex sections like Projects, Work Experience, and Technical Skills using heuristic parsing.
+- **🌐 AI-Driven Role Discovery**: Uses web-based intelligence to suggest the top 3 career paths best suited for your unique skill set.
+- **🎯 Precision Suitability Analysis**: High-precision scoring and personalized reasoning for why you are a match for specific roles.
+- **🗺️ Professional Skill Roadmap**: Visualizes your progress and identifies "Missing Links" in your technical stack.
+- **💼 Live Job Search**: Direct integration with job boards to find current openings based on your "Super Query."
 
-Python
+## 🛠️ Tech Stack
 
-Streamlit
+- **Backend**: FastAPI (Python)
+- **NLP & ML**: Scikit-Learn, NLTK, PDFPlumber, Python-Docx
+- **Search Intelligence**: DuckDuckGo Search API, JobSpy (Integration)
+- **Frontend**: Vanilla HTML5, Modern CSS (Glassmorphism), JavaScript (Async/Await)
 
-scikit-learn (TF-IDF, cosine similarity)
+## 🚀 Getting Started
 
-PyPDF2
+### Prerequisites
 
+- Python 3.8+
+- Active Internet Connection (for AI Role Discovery & Job Scraping)
 
-⚙️ Setup Instructions
-1️⃣ Clone the repository
-git clone <your-repo-link>
-cd resume_webapp
+### Installation
 
-2️⃣ Install dependencies
-python -m pip install -r requirements.txt
+1.  **Clone the repository**:
+    ```bash
+    git clone <your-repo-url>
+    cd resume_webapp
+    ```
 
-3️⃣ Train the model (one-time step)
-python train_model.py
+2.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-4️⃣ Run the app
-python -m streamlit run app.py
+3.  **Run the application**:
+    ```bash
+    python main.py
+    ```
 
+4.  **Access the Dashboard**:
+    Open `http://localhost:5000` in your web browser.
 
-📊 Output
+## 📖 How It Works
 
-Best matched job role
+1.  **Upload**: Submit your resume in `.pdf`, `.docx`, or `.txt` format.
+2.  **Parse**: The `IntelligenceEngine` handles deep structure analysis to extract context beyond just simple keywords.
+3.  **Discovery**: The system queries the web to find trending roles that match your detected skills.
+4.  **Predict**: A custom `JobPredictor` calculates suitability and ATS scores.
+5.  **Roadmap**: The UI generates a visual roadmap of your skills vs. the requirements of your top-matched role.
 
-Similarity scores for all job roles
-
-picture:  ![WhatsApp Image 2026-02-01 at 2 48 25 AM](https://github.com/user-attachments/assets/17ce691c-fa09-4d28-8dbc-f873dc88f059)
-
-
-
-♻️ Reproducibility
-
-Judges and users can reproduce the project by:
-
-Installing requirements
-
-Running train_model.py
-
-Launching the Streamlit app
-
-
-🎯 Use Cases
-
-College placement cells
-
-Resume shortlisting for recruiters
-
-Students analyzing resume-job fit
-
-
-📌 Note
-
-This project uses an explainable ML approach (TF-IDF + cosine similarity) for fast, accurate, and reproducible resume filtering without heavy deep learning models.
-
-
+---
+*Built with ❤️ for the next generation of developers.*
